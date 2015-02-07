@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title >Angry Roux</title>
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+	</head>
+	<body>
+		<div id="gamecontainer">
+			<canvas id="gamecanvas" width="640" height="480" class="gamelayer">
+			</canvas>
+			<div id="scorescreen" class="gamelayer">
+				<img id="togglemusic" src="images/icons/sound.png" onclick="game.toggleBackgroundMusic()">
+				<img src="images/icons/prev.png" onClick="game.showLevelScreen()">
+				<span id="score" > Score: 0</span>
+			</div>
+			<div id="gamestartscreen" class="gamelayer">
+				<img src="images/icons/play.png" alt="Play Game" onClick="game.showLevelScreen()"><br>
+				<!--<img src="images/icons/settings.png" alt="Settings">-->
+			</div>
+			<div id="levelselectscreen" class="gamelayer">
+			</div>
+			<div id="loadingscreen" class="gamelayer">
+				<div id="loadingmessage">
+				</div>
+			</div>
+			<div id="endingscreen" class="gamelayer">
+				<p id="endingmessage" > The Level Is Over Message</p>
+				<p id="playcurrentlevel" onclick="game.restartLevel();"><img src="images/icons/prev.png" > Rejouer</p>
+				<p id="playnextlevel" onclick="game.startNextLevel();"><img src="images/icons/next.png" > Niveau suivant </p>
+				<p id="showLevelScreen" onclick="game.showLevelScreen();"><img src="images/icons/return.png" > Menu</p>
+			</div>
+		</div>
+		<!--<canvas id="debugcanvas" width="1000" height="480" style="border:1px solid black;"></canvas>-->
+	</body>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Box2dWeb-2.1.a.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script> <!-- needs to be after game.js b/c it contains init instructions --!>
+</html>
